@@ -45,6 +45,30 @@ tabela = pandas.read_csv("produtos.csv")
 print(tabela)
 
 # Passo 4: Cadastrar 1 produto
+pyautogui.click(x=530, y=259)
+#codigo
+pyautogui.write("codigo")
+pyautogui.press("tab")
+#marca
+pyautogui.write("marca")
+pyautogui.press("tab")
+#tipo
+pyautogui.write("tipo")
+pyautogui.press("tab")
+#categoria
+pyautogui.write("categoria")
+pyautogui.press("tab")
+#preço unitário
+pyautogui.write("codigo")
+pyautogui.press("tab")
+#custo
+pyautogui.write("custo")
+pyautogui.press("tab")
+#obs
+pyautogui.write("obs")
+pyautogui.press("tab")
 
+#clicar em enviar
+pyautogui.press("enter")
 
 # Passo 5: Repetir o processo de cadastrar até cadastrar os produtos
