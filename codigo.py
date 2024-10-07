@@ -39,5 +39,12 @@ pyautogui.click(x=779, y=534)
 time.sleep(2)
 
 # Passo 3:  Importar a base de dados
+import pandas
+
+tabela = pandas.read_csv("produtos.csv")
+print(tabela)
+
 # Passo 4: Cadastrar 1 produto
+
+
 # Passo 5: Repetir o processo de cadastrar até cadastrar os produtos
