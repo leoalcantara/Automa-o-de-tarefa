@@ -46,26 +46,42 @@ print(tabela)
 
 # Passo 4: Cadastrar 1 produto
 pyautogui.click(x=530, y=259)
-#codigo
-pyautogui.write("codigo")
+
+linha = 0
+
+# codigo
+codigo = tabela.loc[linha, "codigo"]
+pyautogui.write(str(codigo))
 pyautogui.press("tab")
-#marca
-pyautogui.write("marca")
+
+# marca
+marca = tabela.loc[linha, "marca"]
+pyautogui.write(str(marca))
 pyautogui.press("tab")
-#tipo
-pyautogui.write("tipo")
+
+# tipo
+tipo = tabela.loc[linha, "tipo"]
+pyautogui.write(str(tipo))
 pyautogui.press("tab")
-#categoria
-pyautogui.write("categoria")
+
+# categoria
+categoria = tabela.loc[linha, "categoria"]
+pyautogui.write(str(categoria))
+pyautogui.press("tab"
+                )
+# preco_unitario
+preco_unitario = tabela.loc[linha, "preco_unitario"]
+pyautogui.write(str(codigo))
 pyautogui.press("tab")
-#preço unitário
-pyautogui.write("codigo")
-pyautogui.press("tab")
+
 #custo
-pyautogui.write("custo")
+custo = tabela.loc[linha, "custo"]
+pyautogui.write(str(custo))
 pyautogui.press("tab")
+
 #obs
-pyautogui.write("obs")
+obs = tabela.loc[linha, "obs"]
+pyautogui.write(str(obs))
 pyautogui.press("tab")
 
 #clicar em enviar
