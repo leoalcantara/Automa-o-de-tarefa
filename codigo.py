@@ -8,7 +8,7 @@ import time
 #pyaurogui.press -> aperta uma tecla
 #pyaurogui.hotkey -> aperta um atalho de teclado (ctrl, c)
 
-pyautogui.PAUSE = 0.5
+pyautogui.PAUSE = 0.3
 
 # abrir navegador
 #apertar a tecla win
@@ -45,46 +45,50 @@ tabela = pandas.read_csv("produtos.csv")
 print(tabela)
 
 # Passo 4: Cadastrar 1 produto
-pyautogui.click(x=530, y=259)
+
 
 linha = 0
+for linha in tabela.index:
+    # selecionar o primeiro campo
+    pyautogui.click(x=530, y=259)        
+    
+    # codigo
+    codigo = tabela.loc[linha, "codigo"]
+    pyautogui.write(str(codigo))
+    pyautogui.press("tab")
 
-# codigo
-codigo = tabela.loc[linha, "codigo"]
-pyautogui.write(str(codigo))
-pyautogui.press("tab")
+    # marca    
+    marca = tabela.loc[linha, "marca"]
+    pyautogui.write(str(marca))
+    pyautogui.press("tab")
+    
+    # tipo
+    tipo = tabela.loc[linha, "tipo"]
+    pyautogui.write(str(tipo))
+    pyautogui.press("tab")
 
-# marca
-marca = tabela.loc[linha, "marca"]
-pyautogui.write(str(marca))
-pyautogui.press("tab")
+    # categoria
+    categoria = tabela.loc[linha, "categoria"]
+    pyautogui.write(str(categoria))
+    pyautogui.press("tab")
+    # preco_unitario
+    preco_unitario = tabela.loc[linha, "preco_unitario"]
+    pyautogui.write(str(codigo))
+    pyautogui.press("tab")
 
-# tipo
-tipo = tabela.loc[linha, "tipo"]
-pyautogui.write(str(tipo))
-pyautogui.press("tab")
+    #custo
+    custo = tabela.loc[linha, "custo"]
+    pyautogui.write(str(custo))
+    pyautogui.press("tab")
 
-# categoria
-categoria = tabela.loc[linha, "categoria"]
-pyautogui.write(str(categoria))
-pyautogui.press("tab"
-                )
-# preco_unitario
-preco_unitario = tabela.loc[linha, "preco_unitario"]
-pyautogui.write(str(codigo))
-pyautogui.press("tab")
+    #obs
+    obs = tabela.loc[linha, "obs"]
+    if not pandas.isna(obs):
+        pyautogui.write(str(obs))
+    pyautogui.press("tab")
 
-#custo
-custo = tabela.loc[linha, "custo"]
-pyautogui.write(str(custo))
-pyautogui.press("tab")
-
-#obs
-obs = tabela.loc[linha, "obs"]
-pyautogui.write(str(obs))
-pyautogui.press("tab")
-
-#clicar em enviar
-pyautogui.press("enter")
+    #clicar em enviar
+    pyautogui.press("enter")
+    pyautogui.scroll(5000)
 
 # Passo 5: Repetir o processo de cadastrar até cadastrar os produtos
